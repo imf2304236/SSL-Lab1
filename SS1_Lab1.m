@@ -10,12 +10,11 @@ v1D = 10:-0.1:0
 v2A = [4 2 5];
 v2B = [3 8 9];
 dotV2 = dot(v2A, v2B);
-magV2C = dotV2/(norm(v2A)*norm(v2B))
-thetaV2C = acosd(magV2C)
+mag = acosd(dotV2/(norm(v2A)*norm(v2B)))
 
 %% Problem 3
 sum3A = sum(0:100)
-sum3B1 = sum([0:100].^2)
+sum3B = sum([0:100].^2)
 
 %% Problem 4
 arg = -pi/2;
@@ -57,9 +56,14 @@ y = [y3, y4];
 plot(t, y);
 
 %% Problem 7
-figure 'Name' 'Problem 7'
-s = tf('s');
+figure 'Name' 'Problem 7a'
 RC = 10;
+w = 0:0.001:1000;
+H = 1./sqrt(1+(w*RC).^2);
+plot(w,H);
+
+figure 'Name' 'Problem 7b'
+s = tf('s');
 H = 1/(RC*s+1);
 bode(H, {0, 1000});
 
