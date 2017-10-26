@@ -6,9 +6,6 @@ v1B = [3 -1 2]'
 v1C = 0:0.1:10
 v1D = 10:-0.1:0
 
-% Old Code:
-% vector1D = fliplr(v1C);
-
 %% Problem 2
 v2A = [4 2 5];
 v2B = [3 8 9];
@@ -18,24 +15,10 @@ dotV2 = dot(v2A, v2B);
 magV2C = dotV2/(magV2A*magV2B)
 thetaV2C = acos(v2C)
 
-% Old Code:
-% magV2A = sqrt(v2A(1)^2 + v2A(2)^2 + v2A(3)^2);
-% magV2B = sqrt(v2B(1)^2 + v2B(2)^2 + v2B(3)^2);
-% dotV2 = v2A(1) * v2B(1) + v2A(2) * v2B(2) + v2A(3) * v2B(3);
-% thetaV2 = acosd(dotV2/(magV2A*magV2B));
-
 %% Problem 3
 k = 0:100;
 sum3A = sum(k)
 sum3B1 = sum(k.^2)
-
-% Old Code:
-% sum3A = 0;
-% sum3B = 0;
-% for i=0:100
-%     sum3A = sum3A + i;
-%     sum3B = sum3B + i^2;
-% end
 
 %% Problem 4
 arg = -pi/2;
@@ -68,18 +51,6 @@ s= tf('s');
 RC = 10;
 H = 1/(RC*s+1);
 bode(H);
-
-% Old Code:
-% w = 0:0.001:1000;
-% RC = 10;
-% H = 1./sqrt(1+(w*RC).^2);
-% figure 'Name' 'Problem 7a'
-% plot(w,H);
-% figure 'Name' 'Problem 7b'
-% A = 20*log10(H);
-% plot(w,A);
-% ax = gca;
-% ax.XScale = 'log';
 
 %% Function Definitions
 function z = mysum(x,y)
