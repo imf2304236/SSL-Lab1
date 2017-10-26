@@ -13,7 +13,7 @@ magV2A = norm(v2A);
 magV2B = norm(v2B);
 dotV2 = dot(v2A, v2B);
 magV2C = dotV2/(magV2A*magV2B)
-thetaV2C = acos(v2C)
+thetaV2C = acos(magV2C)
 
 %% Problem 3
 k = 0:100;
@@ -47,10 +47,10 @@ plot(t, arrayfun(@prob6, t));
 
 %% Problem 7
 figure
-s= tf('s');
+s = tf('s');
 RC = 10;
 H = 1/(RC*s+1);
-bode(H);
+bode(H, {0, 1000});
 
 %% Function Definitions
 function z = mysum(x,y)
